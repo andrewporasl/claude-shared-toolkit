@@ -1,0 +1,21 @@
+name: check
+on: [pull_request, push]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Rejects secrets and unpinned versions in mcp/servers.json.
+      - run: node --test mcp/
+      - name: Every skill has a SKILL.md
+        run: |
+          status=0
+          for d in skills/*/; do
+            [ -f "$d/SKILL.md" ] || { echo "missing $d/SKILL.md"; status=1; }
+          done
+          exit $status

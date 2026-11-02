@@ -1,0 +1,15 @@
+{
+  "retired": [],
+  "servers": {
+    "github": { "type": "http", "url": "https://api.githubcopilot.com/mcp/", "headersHelper": "node \"{{REPO}}/mcp/github-headers.mjs\"" },
+    "playwright": { "command": "npx", "args": ["-y", "@playwright/mcp@0.0.84", "--headless", "--isolated", "--output-dir", "{{HOME}}/.claude/playwright-mcp"] },
+    "fetch": { "command": "uvx", "args": ["mcp-server-fetch==2026.10.28"] },
+    "time": { "command": "uvx", "args": ["mcp-server-time==2026.10.28"] },
+    "git": { "command": "uvx", "args": ["mcp-server-git==2026.10.28"] },
+    "duckduckgo": { "command": "uvx", "args": ["duckduckgo-mcp-server==0.7.0"] },
+    "wikipedia": { "command": "uvx", "args": ["wikipedia-mcp==2.0.1"] },
+    "memory": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory@2.0.1"], "env": { "MEMORY_FILE_PATH": "{{HOME}}/.claude/mcp-memory.jsonl" } },
+    "sequentialthinking": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@2.0.0"] },
+    "desktop-commander": { "command": "npx", "args": ["-y", "@wonderwhy-er/desktop-commander@0.3.1", "--no-onboarding"], "env": { "npm_config_ignore_scripts": "true" } }
+  }
+}
