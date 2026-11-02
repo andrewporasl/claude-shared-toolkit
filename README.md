@@ -74,6 +74,3 @@ Then restart Claude Code.
 - **playwright says `Connection closed`:** upgrade Node to 20 or later.
 - **A skill doesn't show up:** you already have a skill with that name. Yours wins.
 
-## Credits
-
-Third-party skills come from [anthropics/skills](https://github.com/anthropics/skills), [vercel-labs/skills](https://github.com/vercel-labs/skills), [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) and [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill). See each project for its license.

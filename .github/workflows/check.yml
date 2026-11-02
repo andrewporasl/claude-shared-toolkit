@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 22
       # Rejects secrets and unpinned versions in mcp/servers.json.
-      - run: node --test mcp/
+      - run: node --test mcp/*.test.mjs
       - name: Every skill has a SKILL.md
         run: |
           status=0
